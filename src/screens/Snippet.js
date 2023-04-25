@@ -44,13 +44,20 @@ const Snippet = ({route, navigation}) => {
 
     return (
             <ScrollView className="flex flex-col p-5 pb-5 pt-10 w-full bg-zinc-950">
+                <View className="pt-5 pb-5">
+                    <TouchableOpacity className="flex flex-row justify-end items-start" onPress={() => navigation.goBack()}>
+                        <Text className="text-gray-300 font-extrabold pr-2">Back</Text>
+                    </TouchableOpacity>
+                </View>
                 {
                     snippet ? (
-                        <View className="pb-5 bg-zinc-950 pt-10 pb-20 space-y-5">
+                        <View className="pb-5 bg-zinc-950 pb-20 space-y-5">
                             <Text className="text-gray-300 text-md border-b border-zinc-500 font-semibold">{prompt}</Text>
                             {
                                 blocks.map((codes, index) => {
-                                    if (index % 2 === 0) {return <View key={index}></View>}
+                                    if (index % 2 === 0) {
+                                        return <View key={index} >{codes !== "" &&  <View className="border border-zinc-500 px-4 py-4 rounded-md"><Text className="text-gray-300 font-semibold">{codes.trim()}</Text></View>}</View>
+                                    }
                                     else {
                                         return (
                                             <View className="border border-zinc-500 overflow-scroll space-y-1" key={index}>
@@ -73,7 +80,7 @@ const Snippet = ({route, navigation}) => {
                         </View>
                     ) : (
                         <View className="flex flex-col justify-center items-center">
-                            <Text className="text-lg text-gray-500 font-bold pt-20">...</Text>
+                            <Text className="text-lg text-gray-500 font-bold pt-20">Fetching that code</Text>
                         </View>
                     )
                 }

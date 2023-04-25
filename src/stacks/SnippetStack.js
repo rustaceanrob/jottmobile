@@ -4,6 +4,8 @@ import LanguageSelection from '../screens/LanguageSelection';
 import FrameworkSelection from '../screens/FrameworkSelection';
 import ProjectSelection from '../screens/ProjectSelection';
 import NewSnippet from '../screens/NewSnippet';
+import NewProject from '../screens/NewProject';
+
 const Stack = createNativeStackNavigator();
 
 const SnippetStack = () => {
@@ -17,6 +19,8 @@ const SnippetStack = () => {
         component={ProjectSelection} options={{ headerShown: false }} />
         <Stack.Screen name="NewSnippet" 
         component={NewSnippet} options={{ headerShown: false }} />
+        <Stack.Screen name="NewProject" 
+        component={NewProject} options={{ headerShown: false }} />
     </Stack.Navigator>
   )
 }

@@ -28,7 +28,7 @@ const Projects = ({navigation}) => {
         <SafeAreaView className="w-full h-screen bg-zinc-950">
             <View className="w-full">
             {projects ? ( 
-                <View className="space-y-2 w-full pt-10">
+                <View className="space-y-2 w-full pt-10 pb-20">
                     {
                         projects.length === 0 ? (
                             <View className="flex flex-col justify-center items-center">
@@ -45,7 +45,7 @@ const Projects = ({navigation}) => {
                 </View>
             ) : (
                 <View className="flex flex-col justify-center items-center">
-                    <Text className="text-lg text-gray-500 font-bold pt-20">...</Text>
+                    <Text className="text-lg text-gray-500 font-bold pt-20">Fetching projects</Text>
                 </View>
             )}
             </View>

@@ -58,8 +58,8 @@ const EditSnippet = ({route, navigation}) => {
     
     return (
         <SafeAreaView className="w-full h-screen bg-zinc-950">
-            <View className="flex flex-col pt-5 pb-40 space-y-5">
-            <TouchableOpacity className="pl-5" onPress={() => navigation.goBack()}>
+            <View className="flex flex-col pt-5 pb-40 space-y-5 pl-5 pr-5">
+            <TouchableOpacity className="" onPress={() => navigation.goBack()}>
                 <Text className="font-bold text-gray-300">Back</Text>
             </TouchableOpacity>
             <View className="border border-zinc-700 rounded-md px-5 py-5 w-full space-y-5 pl-5 pr-5">

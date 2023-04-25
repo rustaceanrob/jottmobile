@@ -7,9 +7,10 @@ const Details = ({navigation}) => {
     return (
         <LinearGradient colors={['#374151', '#111827']} className="w-full h-screen">
             <View className="flex flex-col h-screen w-full justify-between items-center bg-gray-800 pl-10 pr-10 pt-20 pb-20">
-                <View className="flex flex-col justify-center items-center space-y-20 pt-40">
+                <View className="flex flex-col justify-center items-center space-y-10 pt-20">
+                <Text className="text-4xl font-extrabold text-gray-200 pb-10">Support for...</Text>
                     <View className="flex flex-col justify-center items-center">
-                        <Text className="text-2xl font-extrabold text-gray-200 pb-5">15+ languages.</Text>
+                        <Text className="text-2xl font-extrabold text-gray-200 pb-5">15+ languages</Text>
                         <View className="flex flex-row justify-between space-x-5">
                             <FontAwesome5 name="python" color="purple" size={40}/>
                             <MaterialCommunityIcons name="language-javascript" color="purple" size={40}/>
@@ -17,8 +18,8 @@ const Details = ({navigation}) => {
                             <MaterialCommunityIcons name="language-kotlin" color="purple" size={40}/>
                         </View>
                     </View>
-                    <View className="flex flex-col justify-center items-center pb-20">
-                        <Text className="text-2xl font-extrabold text-gray-200 pb-5">And 20+ frameworks.</Text>
+                    <View className="flex flex-col justify-center items-center pb-20 pt-10">
+                        <Text className="text-2xl font-extrabold text-gray-200 pb-5">20+ frameworks</Text>
                         <View className="flex flex-row justify-between space-x-5">
                             <MaterialCommunityIcons name="angular" color="purple" size={40}/>
                             <MaterialCommunityIcons name="react" color="purple" size={40}/>

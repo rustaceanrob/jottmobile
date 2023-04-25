@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, FlatList } from 'react-native'
+import { View, Text, SafeAreaView, FlatList, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { UserAuth } from '../context/AuthContext'
 import { db } from '../config/firebase'
@@ -27,8 +27,13 @@ const ProjectView = ({route, navigation}) => {
 
   return (
     <SafeAreaView className="w-full h-screen bg-zinc-950">
+            <View className="pt-5">
+              <TouchableOpacity className="flex flex-row justify-end items-start" onPress={() => navigation.goBack()}>
+                  <Text className="text-gray-300 font-extrabold pr-2">Back</Text>
+              </TouchableOpacity>
+          </View>
           {snippets ? ( 
-              <View className="w-full pt-10">
+              <View className="w-full pt-5 pb-20">
                   {
                       snippets.length === 0 ? (
                         <View className="flex flex-col justify-center items-center">
@@ -45,7 +50,7 @@ const ProjectView = ({route, navigation}) => {
               </View>
           ) : (
             <View className="flex flex-col justify-center items-center">
-              <Text className="text-lg text-gray-500 font-bold pt-20">...</Text>
+              <Text className="text-lg text-gray-500 font-bold pt-20">Fetching snippets</Text>
             </View>
           )}
     </SafeAreaView>

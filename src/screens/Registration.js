@@ -8,7 +8,7 @@ const Registration = ({navigation}) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
-    const [emailSent, setEmailSent] = useState(true)
+    const [emailSent, setEmailSent] = useState(false)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
     const [passwordDialog, setPasswordDialog] = useState(false)
@@ -44,6 +44,11 @@ const Registration = ({navigation}) => {
                     <Entypo name="login" color={loading ? 'gray' : 'white'} size={24}/>
                 </TouchableOpacity>
                 <View className="pt-5 justify-center items-center flex flex-col">
+                    {
+                        !emailSent &&  <TouchableOpacity className="justify-center items-center flex flex-col" onPress={() => navigation.navigate('Login')}>
+                                          <Text className="text-gray-500 font-bold">I have an account</Text>
+                                       </TouchableOpacity>
+                    }
                     {
                         emailSent && <View className="flex flex-col justify-center items-center">
                                 <Text className="text-xs text-gray-300 font-extrabold pb-5">A verification email was sent to your inbox. Please verify your email to sign in</Text>

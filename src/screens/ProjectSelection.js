@@ -10,22 +10,24 @@ const ProjectSelection = ({route, navigation}) => {
     const { user } = UserAuth()
     const [projects, setProjects] = useState()
     const [projectId, setProjectId] = useState('')
-    const [selectedProject, setSelectedProject] = useState('')
-    const [name, setName] = useState('')
-    const [des, setDes] = useState('')
 
     const handleNext = () => {
-        if (projectId === "") { return } // navigate to a new project
-        navigation.navigate("NewSnippet", {
-            projectId: projectId,
-            lang: lang,
-            frameworks: frameworks
-        })
+        if (projectId === "") { 
+            navigation.navigate("NewProject", {
+                lang: lang,
+                frameworks: frameworks
+            })
+        } else {
+            navigation.navigate("NewSnippet", {
+                projectId: projectId,
+                lang: lang,
+                frameworks: frameworks
+            })
+        } 
     }
 
     const handleSelectProject = (item) => {
         setProjectId(item.id);
-        setSelectedProject(item.name)
     }
 
     useEffect(() => {
