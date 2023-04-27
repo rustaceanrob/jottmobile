@@ -41,7 +41,7 @@ const NewProject = ({route, navigation}) => {
                 <TouchableOpacity className="" onPress={() => navigation.goBack()}>
                     <Text className="font-bold text-gray-300">Back</Text>
                 </TouchableOpacity>
-                <View className="border border-zinc-700 rounded-md px-5 py-5 w-full space-y-5 pl-5 pr-5">
+                <View className="border border-zinc-700 rounded-md px-5 py-5 w-full space-y-2 pl-5 pr-5">
                     <Text className="text-gray-300 font-extrabold text-lg">Name</Text>
                     <TextInput multiline={false} className="text-xl w-full text-white rounded-md px-2 py-2 border border-zinc-700"
                     placeholder='' value={name} onChangeText={setName} autoCapitalize='none'/>

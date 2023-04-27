@@ -27,6 +27,21 @@ export const AuthContextProvider = ({ children }) => {
             setLoading(false)
         })
     }
+    
+    const reverify = (email, pw, setError, setLoading, setEmailSent) => {
+        signInWithEmailAndPassword(auth, email, pw).then((userCredential) => {
+            sendEmailVerification(userCredential.user).then(()=> {
+                setError(false)
+                setEmailSent(true)
+            }).catch(() => {
+                setError(true)
+            })
+        }).catch(() => {
+            setError(true)
+            setLoading(false)
+        })
+
+    }
 
     const resetPassword = (email, setEmailSent, setError) => {
         sendPasswordResetEmail(auth, email).then(() => {
@@ -47,10 +62,10 @@ export const AuthContextProvider = ({ children }) => {
         return () => {
             unsubscribe();
         };
-      }, [])
+      }, [user])
 
     return (
-        <UserContext.Provider value={{user, signInEmail, resetPassword, createEmail, logOut}}>
+        <UserContext.Provider value={{user, signInEmail, resetPassword, createEmail, reverify, logOut}}>
             {children}
         </UserContext.Provider>
     )

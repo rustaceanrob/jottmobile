@@ -42,7 +42,6 @@ const NewSnippet = ({route, navigation}) => {
             setError(false)
             const response = getSnippetResponse({lang: lang, frames: formatList(frameworks), prompt: prompt}).then((response) => {
             const code = response.data.content.trim()
-            console.log(code)
             addDoc(collection(db, `users/${uid}/projects/${projectId}/snippets/`), {"name": name, "prompt": prompt, "lang": lang, "frameworks": frameworks, "modelResponse": code}).then((response) => {
                 setLoading(false)
                 setSuccess(true)
@@ -65,8 +64,8 @@ const NewSnippet = ({route, navigation}) => {
                 <TouchableOpacity className="" onPress={() => navigation.goBack()}>
                     <Text className="font-bold text-gray-300">Back</Text>
                 </TouchableOpacity>
-                <View className="border border-zinc-700 rounded-md px-5 py-5 w-full space-y-5 pl-5 pr-5">
-                <Text className="text-gray-300 font-extrabold text-lg">Name</Text>
+                <View className="border border-zinc-700 rounded-md px-5 py-5 w-full space-y-2 pl-5 pr-5">
+                <Text className="text-gray-300 font-extrabold text-lg">Snippet Name</Text>
                     <TextInput multiline={false} className="text-lg w-full text-white rounded-md px-2 py-2 border border-zinc-700"
                     placeholder='How will you remember this?' value={name} onChangeText={setName} autoCapitalize='none'/>
                     <Text className="text-gray-300 font-extrabold text-lg">What needs to be coded?</Text>
@@ -80,7 +79,7 @@ const NewSnippet = ({route, navigation}) => {
                 {
                     loading ? (
                         <View className="flex flex-col justify-center items-center pt-5 pl-10 pr-10 border border-zinc-700 px-5 py-5 rounded-md">
-                            <Text className="text-gray-400 font-semibold text-md">Your code has been submitted. Responses can take up to a minute. Head to your projects to edit the snippet.</Text>
+                            <Text className="text-gray-400 font-semibold text-md">Your code has been submitted. Responses can take up to a minute.</Text>
                         </View>
                     ) : (
                         <></>

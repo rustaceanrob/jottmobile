@@ -6,8 +6,8 @@ import React from 'react'
 const Organization = ({navigation}) => {
     return (
         <LinearGradient colors={['#374151', '#111827']} className="w-full h-screen">
-            <View className="flex flex-col h-screen w-full justify-between items-center bg-gray-800 pl-10 pr-10 pt-20 pb-20">
-                <View className="flex flex-col justify-center items-start pt-20">
+            <View className="flex flex-col h-screen w-full justify-between items-center bg-gray-800 pl-10 pr-10 pb-20">
+                <View className="flex flex-col justify-center items-start pt-10 pb-10">
                     <Text className="text-4xl font-extrabold text-gray-200 pt-10">Organize your code into projects.</Text>
                     <Text className="text-4xl font-extrabold text-gray-200 pt-10">Access them later through the web app.</Text>
                 </View>

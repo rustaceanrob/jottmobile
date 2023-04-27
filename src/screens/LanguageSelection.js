@@ -32,7 +32,7 @@ const LanguageSelection = ({navigation}) => {
                         <Text className="text-gray-300 font-extrabold">Next</Text>
                     </TouchableOpacity>
                 </View>
-                <ScrollView  className="space-y-2 px-2 py-2" showsHorizontalScrollIndicator={true}>
+                <ScrollView  className="space-y-2 px-2 py-2 pl-5 pr-5" showsHorizontalScrollIndicator={true}>
                     {languages.map((language) => (
                     <TouchableOpacity
                         key={language}

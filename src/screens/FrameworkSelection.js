@@ -42,7 +42,7 @@ const FrameworkSelection = ({route, navigation}) => {
                 </TouchableOpacity>
             </View>
             <Text className="text-gray-300 font-extrabold pl-5 pb-2">Select up to 3 references:</Text>
-            <ScrollView  className="space-y-2 px-2 py-2" showsHorizontalScrollIndicator={true}>
+            <ScrollView  className="space-y-2 px-2 py-2 pl-5 pr-5" showsHorizontalScrollIndicator={true}>
                 {frameworks.map((framework) => (
                     <TouchableOpacity
                     key={framework}

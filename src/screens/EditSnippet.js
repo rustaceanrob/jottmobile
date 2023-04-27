@@ -62,7 +62,7 @@ const EditSnippet = ({route, navigation}) => {
             <TouchableOpacity className="" onPress={() => navigation.goBack()}>
                 <Text className="font-bold text-gray-300">Back</Text>
             </TouchableOpacity>
-            <View className="border border-zinc-700 rounded-md px-5 py-5 w-full space-y-5 pl-5 pr-5">
+            <View className="border border-zinc-700 rounded-md px-5 py-5 w-full space-y-2 pl-5 pr-5">
                 <Text className="text-gray-300 font-extrabold text-lg">Suggest an edit</Text>
                 <TextInput multiline={true} numberOfLines={4} className="text-xl w-full text-white rounded-md px-2 py-2 border border-zinc-700"
                 placeholder='What needs to be fixed?' value={edit} onChangeText={setEdit} autoCapitalize='none'/>
